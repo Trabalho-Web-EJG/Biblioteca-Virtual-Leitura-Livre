@@ -4,11 +4,12 @@ body {
 }
 
 .card {
-  transition: transform 0.2s;
+  transition: all 0.25s ease-in-out;
+  border: none;
 }
-
 .card:hover {
-  transform: scale(1.02);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .modo-escuro {
@@ -18,7 +19,6 @@ body {
 
 .modo-escuro .card {
   background-color: #1e1e1e;
-  border-color: #333;
   color: #fff;
 }
 
@@ -29,13 +29,32 @@ body {
   border-color: #555;
 }
 
-.modo-escuro .btn-outline-dark {
-  color: white;
-  border-color: white;
-}
-
 .modo-escuro .list-group-item {
   background-color: #1c1c1c;
-  color: #fff;
+  color: #f1f1f1 !important;
   border-color: #333;
+}
+
+.modo-escuro .list-group-item strong {
+  color: #ffffff !important;
+}
+
+.modo-escuro .list-group-item small {
+  color: #cccccc !important;
+}
+
+.btn-success {
+  background: linear-gradient(90deg, #1cc88a, #17a673);
+  border: none;
+}
+.btn-success:hover {
+  filter: brightness(1.1);
+}
+.modo-escuro #busca {
+  color: #ffffff !important; 
+}
+
+.modo-escuro #busca::placeholder {
+  color: #ffffff !important; 
+  opacity: 0.7; 
 }
