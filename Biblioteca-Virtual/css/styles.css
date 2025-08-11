@@ -1,10 +1,41 @@
-body{
-    font-family: 'Poppins', sans-serif;
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
-/*.modo-escuro .bg-romance { background-color: #e83e8c !important; }
-.modo-escuro .bg-ficcao { background-color: #0dcaf0 !important; }
-.modo-escuro .bg-fantasia { background-color: #ffc107 !important; color: #212529 !important; }
-.modo-escuro .bg-classico { background-color: #198754 !important; }
-.modo-escuro .bg-poesia { background-color: #6f42c1 !important; }
-.modo-escuro .bg-drama { background-color: #dc3545 !important; }*/
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.modo-escuro {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+.modo-escuro .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #fff;
+}
+
+.modo-escuro .form-control,
+.modo-escuro .form-select {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.modo-escuro .btn-outline-dark {
+  color: white;
+  border-color: white;
+}
+
+.modo-escuro .list-group-item {
+  background-color: #1c1c1c;
+  color: #fff;
+  border-color: #333;
+}
