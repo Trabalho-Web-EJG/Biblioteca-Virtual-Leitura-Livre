@@ -1,16 +1,88 @@
 const livrosDisponiveis = [
-  { id: 1, titulo: "Dom Casmurro", autor: "Machado de Assis", genero: "Romance" },
-  { id: 2, titulo: "A Moreninha", autor: "Joaquim M. de Macedo", genero: "Romance" },
-  { id: 3, titulo: "Iracema", autor: "José de Alencar", genero: "Romance" },
-  { id: 4, titulo: "Os Sertões", autor: "Euclides da Cunha", genero: "Ficção" },
-  { id: 5, titulo: "O Guarani", autor: "José de Alencar", genero: "Aventura" },
-  { id: 6, titulo: "Memórias Póstumas", autor: "Machado de Assis", genero: "Ficção" },
-  { id: 7, titulo: "Marília de Dirceu", autor: "T. A. Gonzaga", genero: "Poesia" },
-  { id: 8, titulo: "O Ateneu", autor: "Raul Pompeia", genero: "Romance" },
-  { id: 9, titulo: "Policarpo Quaresma", autor: "Lima Barreto", genero: "Ficção" },
-  { id: 10, titulo: "Canções", autor: "Castro Alves", genero: "Poesia" },
-  { id: 11, titulo: "Senhora", autor: "José de Alencar", genero: "Romance" },
-  { id: 12, titulo: "Viagens na Minha Terra", autor: "Garrett", genero: "Aventura" }
+  { 
+    id: 1, 
+    titulo: "Dom Casmurro", 
+    autor: "Machado de Assis", 
+    genero: "Romance",
+    capa: "../img/domcasmurro.png" 
+  },
+  { 
+    id: 2, 
+    titulo: "A Moreninha", 
+    autor: "Joaquim M. de Macedo", 
+    genero: "Romance",
+    capa: "../img/moreninha.png" 
+  },
+  { 
+    id: 3, 
+    titulo: "Iracema", 
+    autor: "José de Alencar", 
+    genero: "Romance",
+    capa: "../img/iracema.png" 
+  },
+  { 
+    id: 4, 
+    titulo: "Os Sertões", 
+    autor: "Euclides da Cunha", 
+    genero: "Ficção",
+    capa: "../img/os sertoes.png" 
+  },
+  { 
+    id: 5, 
+    titulo: "O Guarani", 
+    autor: "José de Alencar", 
+    genero: "Aventura",
+    capa: "../img/guarani.png" 
+  },
+  { 
+    id: 6, 
+    titulo: "Memórias Póstumas", 
+    autor: "Machado de Assis", 
+    genero: "Ficção",
+    capa: "../img/memorias póstumas.png" 
+  },
+  { 
+    id: 7, 
+    titulo: "Marília de Dirceu", 
+    autor: "T. A. Gonzaga", 
+    genero: "Poesia",
+    capa: "../img/Marília de Dirceu.png" 
+  },
+  { 
+    id: 8, 
+    titulo: "O Ateneu", 
+    autor: "Raul Pompeia", 
+    genero: "Romance",
+    capa: "../img/o ateneu.png" 
+  },
+  { 
+    id: 9, 
+    titulo: "Policarpo Quaresma", 
+    autor: "Lima Barreto", 
+    genero: "Ficção",
+    capa: "../img/policarpo.png" 
+  },
+  { 
+    id: 10, 
+    titulo: "A Hora da Estrela", 
+    autor: "Clarice Lispector", 
+    genero: "Romance",
+    capa: "../img/estrela.png" 
+  },
+  { 
+    id: 11, 
+    titulo: "Senhora", 
+    autor: "José de Alencar", 
+    genero: "Romance",
+    capa: "../img/senhora.png" 
+  },
+  { 
+    id: 12, 
+    titulo: "Viagens na Minha Terra", 
+    autor: "Garrett", 
+    genero: "Aventura",
+    capa: "../img/viagens na minha terra.png" 
+  }
 ];
 
 let estante = JSON.parse(localStorage.getItem('estante')) || [];
@@ -31,12 +103,16 @@ function atualizarEstante() {
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between align-items-center';
     li.innerHTML = `
-      <div>
-        <strong>${livro.titulo}</strong> - ${livro.autor}
-        <label class="ms-2">
-          <input type="checkbox" ${livro.lido ? 'checked' : ''} onchange="alternarLido(${indice})">
-          <small class="ms-1">Lido</small>
-        </label>
+      <div class="d-flex align-items-center">
+        <img src="${livro.capa}" class="miniatura-capa" alt="Capa ${livro.titulo}">
+        <div>
+          <strong>${livro.titulo}</strong><br>
+          <small class="text-muted">${livro.autor}</small>
+          <label class="ms-2 d-block mt-1">
+            <input type="checkbox" ${livro.lido ? 'checked' : ''} onchange="alternarLido(${indice})">
+            <small class="ms-1">Lido</small>
+          </label>
+        </div>
       </div>
       <button class="btn btn-sm btn-danger" onclick="removerLivro(${indice})">
         <i class="fa fa-trash"></i>
@@ -64,14 +140,12 @@ function adicionarLivro(id) {
   }
 }
 
-
 function removerLivro(indice) {
   const livroRemovido = estante.splice(indice, 1)[0];
   salvarEstante();
   atualizarEstante();
   mostrarLivros(); 
 }
-
 
 function alternarLido(indice) {
   estante[indice].lido = !estante[indice].lido;
@@ -93,14 +167,16 @@ function mostrarLivros() {
     )
     .forEach(livro => {
       const coluna = document.createElement('div');
-      coluna.className = 'col-md-6 col-lg-4 col-xl-3';
+      coluna.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
       coluna.innerHTML = `
-        <div class="card shadow-sm rounded-4 mb-4 h-100">
+        <div class="card shadow-sm h-100">
+          <img src="${livro.capa}" class="card-img-top" alt="Capa do livro ${livro.titulo}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">${livro.titulo}</h5>
-            <p class="card-text mb-3">
-              <small><strong>${livro.autor}</strong><br>${livro.genero}</small>
+            <p class="card-text mb-2">
+              <small class="text-muted">${livro.autor}</small>
             </p>
+            <span class="badge bg-secondary mb-3">${livro.genero}</span>
             <button class="btn btn-success mt-auto" onclick="adicionarLivro(${livro.id})">
               <i class="fa fa-plus me-1"></i>Adicionar à Estante
             </button>
@@ -110,7 +186,6 @@ function mostrarLivros() {
       container.appendChild(coluna);
     });
 }
-
 
 document.getElementById('busca').addEventListener('input', mostrarLivros);
 document.getElementById('filtro-genero').addEventListener('change', mostrarLivros);

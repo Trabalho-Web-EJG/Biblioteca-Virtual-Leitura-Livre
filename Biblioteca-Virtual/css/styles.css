@@ -1,30 +1,87 @@
+/* -- MODO CLARO (mais suave) -- */
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #f2f4f5; 
+  color: #212529;
   transition: background 0.3s, color 0.3s;
 }
 
-.card {
-  transition: all 0.25s ease-in-out;
-  border: none;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+header {
+  background: linear-gradient(90deg, #dfe7ea, #a4d9d9); 
 }
 
+header h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #212529;
+}
+
+.bg-white,
+.list-group,
+.p-3 {
+  background-color: #fafafa; 
+  color: #212529;
+  border-color: #dee2e6;
+}
+
+.card {
+  background-color: #ffffff;
+  transition: all 0.25s ease-in-out;
+  border: none;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* -- MODO ESCURO -- */
 .modo-escuro {
   background-color: #121212 !important;
   color: #f1f1f1 !important;
 }
 
+.modo-escuro header {
+  background: linear-gradient(90deg, #1e1e1e, #2d2d2d) !important;
+}
+
+.modo-escuro h1,
+.modo-escuro h2,
+.modo-escuro h3,
+.modo-escuro h4,
+.modo-escuro h5,
+.modo-escuro h6 {
+  color: #ffffff !important;
+}
+
+.modo-escuro h3 i,
+.modo-escuro h4 i {
+  color: #ffffff !important;
+}
+
 .modo-escuro .card {
   background-color: #1e1e1e;
   color: #fff;
+  border-color: #333;
+}
+
+.modo-escuro .card-img-top {
+  border-bottom: 1px solid #333;
 }
 
 .modo-escuro .form-control,
 .modo-escuro .form-select {
-  background-color: #333;
+  background-color: #2a2a2a;
   color: #fff;
   border-color: #555;
 }
@@ -43,13 +100,6 @@ body {
   color: #cccccc !important;
 }
 
-.btn-success {
-  background: linear-gradient(90deg, #1cc88a, #17a673);
-  border: none;
-}
-.btn-success:hover {
-  filter: brightness(1.1);
-}
 .modo-escuro #busca {
   color: #ffffff !important; 
 }
@@ -57,4 +107,58 @@ body {
 .modo-escuro #busca::placeholder {
   color: #ffffff !important; 
   opacity: 0.7; 
+}
+
+/* Fundo dos cards e blocos no modo noturno */
+.modo-escuro .bg-white,
+.modo-escuro .list-group,
+.modo-escuro .p-3 {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+
+.modo-escuro .card-text small,
+.modo-escuro .card-text p {
+  color: #cccccc !important;
+}
+
+/* Botões */
+.btn-success {
+  background: linear-gradient(90deg, #1cc88a, #17a673);
+  border: none;
+}
+
+.btn-success:hover {
+  filter: brightness(1.1);
+}
+
+#alternar-tema {
+  background-color: #e4e6e7;
+  color: #212529;
+  border: 1px solid #ccc;
+}
+
+#alternar-tema:hover {
+  background-color: #d4d6d7;
+}
+
+.modo-escuro #alternar-tema {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.modo-escuro #alternar-tema:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.miniatura-capa {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 12px;
 }
