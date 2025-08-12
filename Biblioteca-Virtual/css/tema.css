@@ -1,0 +1,87 @@
+/* Modo Escuro */
+.modo-escuro {
+    background-color: #121212 !important;
+    color: #f1f1f1 !important;
+}
+
+.modo-escuro header {
+    background: linear-gradient(90deg, #1e1e1e, #2d2d2d) !important;
+}
+
+.modo-escuro h1,
+.modo-escuro h2,
+.modo-escuro h3,
+.modo-escuro h4,
+.modo-escuro h5,
+.modo-escuro h6 {
+    color: #ffffff !important;
+}
+
+.modo-escuro h3 i,
+.modo-escuro h4 i {
+    color: #ffffff !important;
+}
+
+.modo-escuro .card {
+    background-color: #1e1e1e;
+    color: #fff;
+    border-color: #333;
+}
+
+.modo-escuro .card-img-top {
+    border-bottom: 1px solid #333;
+}
+
+.modo-escuro .form-control,
+.modo-escuro .form-select {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #555;
+}
+
+.modo-escuro .list-group-item {
+    background-color: #1c1c1c;
+    color: #f1f1f1 !important;
+    border-color: #333;
+}
+
+.modo-escuro .list-group-item strong {
+    color: #ffffff !important;
+}
+
+.modo-escuro .list-group-item small {
+    color: #cccccc !important;
+}
+
+.modo-escuro #busca {
+    color: #ffffff !important;
+}
+
+.modo-escuro #busca::placeholder {
+    color: #ffffff !important;
+    opacity: 0.7;
+}
+
+.modo-escuro .bg-white,
+.modo-escuro .list-group,
+.modo-escuro .p-3 {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border-color: #333 !important;
+}
+
+.modo-escuro .card-text small,
+.modo-escuro .card-text p {
+    color: #cccccc !important;
+}
+
+.modo-escuro #alternar-tema {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+.modo-escuro #alternar-tema:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
