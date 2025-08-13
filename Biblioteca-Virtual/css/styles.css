@@ -1,4 +1,3 @@
-/* Estilos base */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f2f4f5;
@@ -6,36 +5,25 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-header {
-    background: linear-gradient(90deg, #dfe7ea, #a4d9d9);
+[data-bs-theme="dark"] .card {
+    background-color: #2b2b2b; 
+    color: #f8f9fa;
 }
 
-header h1, h2, h3, h4, h5, h6 {
-    color: #212529;
+
+[data-bs-theme="dark"] .card-img-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bg-white, .list-group, .p-3 {
-    background-color: #fafafa;
-    color: #212529;
-    border-color: #dee2e6;
+[data-bs-theme="dark"] .list-group-item {
+    background-color: #2b2b2b;
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.15);
+
 }
 
-.card {
-    background-color: #ffffff;
-    transition: all 0.25s ease-in-out;
-    border: none;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+[data-bs-theme="dark"] .btn-success {
+    background: linear-gradient(90deg, #20c997, #17a673);
 }
 
 .miniatura-capa {
@@ -44,23 +32,15 @@ header h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     border-radius: 4px;
     margin-right: 12px;
+
 }
 
-.btn-success {
-    background: linear-gradient(90deg, #1cc88a, #17a673);
-    border: none;
+
+.borda{
+border: 1px solid #121213;
 }
 
-.btn-success:hover {
-    filter: brightness(1.1);
-}
-
-#alternar-tema {
-    background-color: #e4e6e7;
-    color: #212529;
-    border: 1px solid #ccc;
-}
-
-#alternar-tema:hover {
-    background-color: #d4d6d7;
+.card-top{
+    margin-bottom: 0px;
+    
 }
